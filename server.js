@@ -69,9 +69,5 @@ app.get("/login", (req, res) => {
   res.send("Please Login Again....");
 });
 
-// app.listen(PORT, () => {
-//   console.log(`Server started and ruuning on ${PORT} port`);
-// });
 
-/// Listen to be commeneted for testing
 module.exports = app;
