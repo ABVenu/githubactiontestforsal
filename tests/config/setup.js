@@ -15,7 +15,10 @@ beforeAll(async () => {
 // Once testing is finished, clean the DB & close the connection 
 
 afterAll(async () => {
-  await mongoose.connection.dropDatabase(); 
+  const collections = mongoose.connection.collections;
+  for (const key in collections) {
+    await collections[key].deleteMany({});
+  }
   await mongoose.connection.close();
-  console.log("DB Deleted and connection closed")
+  console.log("Collections cleared and connection closed");
 });
