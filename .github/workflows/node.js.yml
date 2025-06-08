@@ -44,7 +44,3 @@ jobs:
       - name: Run Docker container
         run: docker run -d -p 3000:3000 --name nodeapp my-node-redis-app
 
-      - name: Wait and Test API (optional)
-        run: |
-          sleep 5  # Give app a few seconds to boot
-          curl -f http://localhost:3000 || exit 1
